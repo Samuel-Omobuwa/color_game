@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
 import ColorBox from './components/ColorBox';
 import ColorOptions from './components/ColorOptions';
 import ScoreBoard from './components/ScoreBoard';
 import NewGameButton from './components/NewGameButton';
 import { getRandomColor } from './utility/randomColor';
+import '../src/App.css'
+
+
 
 
 const colors = ['red', 'blue', 'yellow', 'green', 'purple'];
@@ -40,10 +42,10 @@ return (
     <h1 className='text-xl font-bold text-grey-800' data-testid='gameInstructions'> 
       Guess the correct color!
     </h1>
-    <ColorBox targetColor={targetColor}/>
-    <ColorOptions colors={colors} handleColorGuess={handleColorGuess}/>
-    <ScoreBoard score={score} gameStatus={gameStatus}/>
-    <NewGameButton startNewGame={startNewGame}/>
+    <ColorBox targetColor={targetColor} data-testid='ColorBox'/>
+    <ColorOptions colors={colors} handleColorGuess={handleColorGuess} data-testid='ColorOption'/>
+    <ScoreBoard score={score} gameStatus={gameStatus} data-testid='ScoreBoard'/>
+    <NewGameButton startNewGame={startNewGame} data-testid='NewGameButton'/>
   </div>
 )
 }
